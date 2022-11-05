@@ -18,6 +18,7 @@ public class MenuManager : MonoBehaviour
 
     private void GameManagerOnGameStateChanged(GameState state)
     {
+        Debug.Log(state);
         _velocitySelectPanel.SetActive(state == GameState.SelectVelocity);
         _simulationPanel.SetActive(state == GameState.Simulation);
         _victoryPanel.SetActive(state == GameState.Victory);
