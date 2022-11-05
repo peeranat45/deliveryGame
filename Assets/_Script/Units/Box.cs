@@ -9,7 +9,6 @@ public class Box : MonoBehaviour
     void Start()
     {
         BoxRg = GetComponent<Rigidbody2D>();
-        BoxRg.velocity = new Vector2(20f, 0);
     }
 
     // Update is called once per frame
