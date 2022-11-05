@@ -10,18 +10,19 @@ public class FinishLine : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player"))
+        if (other.tag != "Player")
         {
             return;
         }
         float currentVelocity = other.GetComponent<Rigidbody2D>().velocity.magnitude;
-        if (currentVelocity < minVelocity || currentVelocity > maxVelocity)
+        if (currentVelocity > minVelocity || currentVelocity < maxVelocity)
         {
-            GameManager.Instance.UpdateGameState(GameState.Lose);
+            Debug.Log(GameManager.Instance);
+            GameManager.Instance.UpdateGameState(GameState.Victory);
         }
         else
         {
-            GameManager.Instance.UpdateGameState(GameState.Victory);
+            GameManager.Instance.UpdateGameState(GameState.Lose);
         }
     }
 }
